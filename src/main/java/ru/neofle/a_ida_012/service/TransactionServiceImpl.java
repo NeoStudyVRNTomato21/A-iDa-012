@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 import ru.neofle.a_ida_012.dao.TransactionDao;
 import ru.neofle.a_ida_012.dto.TransactionDto;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -14,7 +14,7 @@ public class TransactionServiceImpl implements TransactionService{
     private TransactionDao transactionDao;
 
     @Override
-    public List<TransactionDto> getTransactions(String accountNumber, LocalDate statementDate) {
+    public List<TransactionDto> getTransactions(String accountNumber, LocalDateTime statementDate) {
         return transactionDao.getTransactionsByAccountNumberAndStatementDate(accountNumber, statementDate);
     }
 }

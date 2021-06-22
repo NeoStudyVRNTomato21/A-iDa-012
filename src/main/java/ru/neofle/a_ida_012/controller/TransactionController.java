@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.*;
 import ru.neofle.a_ida_012.dto.TransactionDto;
 import ru.neofle.a_ida_012.service.TransactionService;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.List;
 
 @RestController
@@ -17,7 +17,7 @@ public class TransactionController {
 
     @GetMapping
     public ResponseEntity<List<TransactionDto>> getTransactions(@PathVariable String accountNumber, @RequestParam String statementDate){
-        var date = LocalDate.parse(statementDate);
+        var date = LocalDateTime.parse(statementDate);
 
         List<TransactionDto> transactions = transactionService.getTransactions(accountNumber, date);
 

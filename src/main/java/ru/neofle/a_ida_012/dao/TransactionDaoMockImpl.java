@@ -7,7 +7,7 @@ import ru.neofle.a_ida_012.dto.SwiftTransferDto;
 import ru.neofle.a_ida_012.dto.TransactionDto;
 import ru.neofle.a_ida_012.generator.RandomTransactionFields;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,7 +17,7 @@ public class TransactionDaoMockImpl implements TransactionDao {
     private RandomTransactionFields random;
 
     @Override
-    public List<TransactionDto> getTransactionsByAccountNumberAndStatementDate(String accountNumber, LocalDate statementDate) {
+    public List<TransactionDto> getTransactionsByAccountNumberAndStatementDate(String accountNumber, LocalDateTime statementDate) {
         List<TransactionDto> transactions = new ArrayList<>();
         var loopQuantity = (int) (Math.random() * 20);
 
