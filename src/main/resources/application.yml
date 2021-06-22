@@ -1,3 +1,5 @@
+serve.port: ${PORT}
+
 springdoc:
   default-consumes-media-type: application/json
 
